@@ -6,17 +6,12 @@
       case 'pages':
         $controller = new PagesController();
       break;
-
-      case 'assureur':
-        require_once('models/Assureur.php');
-        $controller = new AssureurController();
-      break;
       case 'contrat':
         require_once('models/Contrat.php');
         $controller = new ContratController();
       break;
       case 'client':
-        require_once('models/USser.php');
+        require_once('models/User.php');
         $controller = new UserController();
     }
 
@@ -26,7 +21,7 @@
   // we're adding an entry for the new controller and its actions
   $controllers = array('pages'    => ['home', 'error'],
                        'assureur' => ['getAssureurs', 'getAssureur', 'postAssureur', 'login', 'getLogin'],
-                       'user'   => ['getUsers', 'getUser', 'postUser', 'deleteUser'],
+                       'user'     => ['getUsers', 'getUser', 'postUser', 'deleteUser'],
                        'contrat'  => ['getContrats', 'getContrat', 'postContrat']);
 
   if (array_key_exists($controller, $controllers)) {

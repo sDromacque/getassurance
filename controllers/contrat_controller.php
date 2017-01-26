@@ -1,14 +1,14 @@
 <?php
   class contratController {
     public function getContrats() {
-      $contrats = Contrat::all();
+      $contrats = Contrat::getContrats();
 
       require_once('views/contrats/getContrats.php');
     }
 
     public function postContrat(){
       if(isset($_POST['type_contrat']))
-        $contrat = Contrat::create($_POST['type_contrat'], $_POST['user_id']);
+        $contrat = Contrat::postContrat($_POST['type_contrat'], $_POST['user_id']);
       require_once('views/contrats/postContrat.php');
     }
 
@@ -16,7 +16,7 @@
       if (!isset($_GET['id']))
         return call('pages', 'error');
 
-      $contrat = Contrat::find($_GET['id']);
+      $contrat = Contrat::getcontrat($_GET['id']);
       require_once('views/contrats/getContrat.php');
     }
 
@@ -24,7 +24,7 @@
       if (!isset($_GET['id']))
         return call('pages', 'error');
 
-      $contrat = Contrat::delete($_GET['id']);
+      $contrat = Contrat::deleteContrat($_GET['id']);
       header('Location: http://127.0.0.1/php_mvc/?controller=index');
     }
   }

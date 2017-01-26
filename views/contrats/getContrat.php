@@ -4,5 +4,5 @@
     <?php echo $contrat->lastname; ?>
   </div>
 
-  <a  class="glyphicon glyphicon-remove" href='?controller=contrat&action=delete&id=<?php echo $contrat->id; ?>'>Remove</a>
+  <a  class="glyphicon glyphicon-remove" href='?controller=contrat&action=deleteContrat&id=<?php echo $contrat->id; ?>'>Remove</a>
 </div>
